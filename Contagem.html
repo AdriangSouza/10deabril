@@ -4,91 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contagem Regressiva</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background: linear-gradient(135deg, #ff4b2b, #ff416c);
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            color: white;
-            overflow: hidden;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 50px 70px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 40px;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: space-around;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .time-box {
-            background: #fff;
-            color: #ff416c;
-            padding: 30px 50px;
-            border-radius: 15px;
-            font-size: 60px;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-        }
-
-        .time-box:hover {
-            transform: translateY(-10px);
-            background: #ff4b2b;
-            color: #fff;
-        }
-
-        .message p {
-            font-size: 22px;
-            color: #ffffff;
-            font-weight: bold;
-            animation: fadeIn 2s ease-out;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-    </style>
+    <!-- Referencia o arquivo CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -104,33 +21,7 @@
         </div>
     </div>
 
-    <script>
-        // Define a data para o evento (10 de abril de 2025)
-        const targetDate = new Date("April 10, 2025 00:00:00").getTime();
-
-        // Atualiza a contagem regressiva a cada segundo
-        const countdown = setInterval(function() {
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
-
-            // Calcula dias, horas, minutos e segundos restantes
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            // Atualiza os elementos da página
-            document.getElementById("dias").innerHTML = `${days}d`;
-            document.getElementById("horas").innerHTML = `${hours}h`;
-            document.getElementById("minutos").innerHTML = `${minutes}m`;
-            document.getElementById("segundos").innerHTML = `${seconds}s`;
-
-            // Quando a contagem regressiva terminar, mostra a mensagem de "Feliz dia!"
-            if (timeLeft < 0) {
-                clearInterval(countdown);
-                document.querySelector(".message p").innerHTML = "Feliz dia! O evento chegou!";
-            }
-        }, 1000);
-    </script>
+    <!-- Referencia o arquivo JS -->
+    <script src="script.js"></script>
 </body>
 </html>
